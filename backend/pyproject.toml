@@ -10,6 +10,10 @@ python = "^3.10"
 fastapi = "^0.93.0"
 uvicorn = "^0.21.0"
 pydantic = "^1.10.6"
+requests = "^2.28.2"
+streamlit = "^1.20.0"
+sqlalchemy = "^2.0.5.post1"
+pymysql = "^1.0.2"
 
 
 [build-system]
