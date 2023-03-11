@@ -2,7 +2,7 @@
 
 ## 目的
 
-FastAPI を学習する必要が出てきたので Udemy を教材を購入して学習
+FastAPI を学習する必要が出てきたので Udemy で教材を購入して学習
 
 ## アプリの内容
 
@@ -24,8 +24,11 @@ _自分で考えた点_
 
 _Docker app を立ち上げ、ログインしていることを確認してください_
 
+1: `git clone https://github.com/kandalog/fastapi-application.git`
+2: `cd fastapi-application`
 3: `docker compose build --no-cache`
 4: `docker compose up -d`
 5: `タブを２つ開く`
 6: `./script/fastapi`
 7: `./script/streamlit`
+8: `open http://localhost:8501`
