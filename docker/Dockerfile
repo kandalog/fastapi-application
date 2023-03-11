@@ -4,7 +4,7 @@ ENV PATH /root/.local/bin:$PATH
 
 WORKDIR /app
 
-COPY ["./backend/pyproject.toml", "./backend/poetry.lock", "/app/"]
+COPY ["./app/pyproject.toml", "./app/poetry.lock", "/app/"]
 
 RUN apt-get update \
     && curl -sSL https://install.python-poetry.org | python3 - \
