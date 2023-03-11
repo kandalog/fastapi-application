@@ -33,7 +33,7 @@ def create_room(db: Session, room: schemas.Room):
 
 # 会議室登録
 def create_booking(db: Session, booking: schemas.Booking):
-    db_booking = models.booking(
+    db_booking = models.Booking(
         user_id = booking.user_id,
         room_id = booking.room_id,
         booked_num = booking.booked_num,

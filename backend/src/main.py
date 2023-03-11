@@ -2,7 +2,8 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 
 from .schema import schemas
-from .database import models, database, session, engine
+from .database import models, database
+from .database.database import session, engine
 from .crud import crud
 
 # DBの作成
@@ -11,12 +12,11 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 def get_db():
-    db = Session()
+    db = session
     try:
         yield db
     finally:
         db.close()
-
 
 @app.get("/")
 async def index():
@@ -39,13 +39,13 @@ async def bookings(skip: int = 0, limit: int = 100, db: Session = Depends(get_db
 
 ## Create
 @app.post("/users", response_model=schemas.User)
-async def create_user(user: schemas.User, db: Session = Depends(get_db)):
+async def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return crud.create_user(db=db, user=user)
 
 @app.post("/rooms", response_model=schemas.Room)
-async def create_room(room: schemas.Room, db: Session = Depends(get_db)):
+async def create_room(room: schemas.RoomCreate, db: Session = Depends(get_db)):
     return crud.create_room(db=db, room=room)
 
 @app.post("/bookings", response_model=schemas.Booking)
-async def create_booking(booking: schemas.Booking, db: Session = Depends(get_db)):
+async def create_booking(booking: schemas.BookingCreate, db: Session = Depends(get_db)):
     return crud.create_booking(db=db, booking=booking)
