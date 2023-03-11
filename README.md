@@ -24,11 +24,11 @@ _自分で考えた点_
 
 _Docker app を立ち上げ、ログインしていることを確認してください_
 
-1: `git clone https://github.com/kandalog/fastapi-application.git`
-2: `cd fastapi-application`
-3: `docker compose build --no-cache`
-4: `docker compose up -d`
-5: `タブを２つ開く`
-6: `./script/fastapi`
-7: `./script/streamlit`
-8: `open http://localhost:8501`
+1: `git clone https://github.com/kandalog/fastapi-application.git`  
+2: `cd fastapi-application`  
+3: `docker compose build --no-cache`  
+4: `docker compose up -d`  
+5: `タブを２つ開く`  
+6: `./script/fastapi`  
+7: `./script/streamlit`  
+8: `open http://localhost:8501`  
